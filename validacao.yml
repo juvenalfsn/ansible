@@ -4,5 +4,5 @@
   tasks:
   - name: Criando um arquivo de teste
     file:
-      path: "/tmp/teste1"
+      path: "/tmp/testeawx"
       state: touch
