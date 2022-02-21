@@ -7,10 +7,12 @@
     - mariadb-server
     - mariadb
     - Mysql-python
+  when: ansible_facts['distribution'] == "CentOS"
 
 - name: Enable serice mysql, and touch the state
   service:
     name: mariadb
     enabled: yes
     state: started
+  when: ansible_facts['distribution'] == "CentOS"
     

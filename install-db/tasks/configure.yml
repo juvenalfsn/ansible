@@ -3,7 +3,8 @@
   mysql_db:
     name: wp_db_prd
     state: present
-
+  when: ansible_facts['distribution'] == "CentOS"
+  
 - name: Criando o usuario do banco de dados 'wp_prd'
   mysql_user:
     name: wp_user_01
@@ -11,4 +12,6 @@
     priv: 'wp_db_prod.*:ALL, GRANT'
     host: "%"
     state: present
+  when: ansible_facts['distribution'] == "CentOS"
+
 
