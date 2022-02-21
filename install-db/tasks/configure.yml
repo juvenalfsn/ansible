@@ -3,3 +3,12 @@
     name: wpprd
     state: present
   when: ansible_facts['distribution'] == "CentOS"
+
+- name: Create database user with password and all database privileges and 'WITH GRANT OPTION'
+  mysql_user:
+    name: wp_user_01
+    password: "{{ dbpass }}"
+    priv: 'wp_db_prd.*:ALL,GRANT'
+    host: "%"
+    state: present
+  when: ansible_facts['distribution'] == "CentOS"
