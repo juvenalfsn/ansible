@@ -1,6 +1,6 @@
 # Instalação do mysql server
 - name: Instalando pacotes do MariaDB
-  yum:
+  dnf:
     name: "{{ packages }}"
   vars:
     packages:
