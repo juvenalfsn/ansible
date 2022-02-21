@@ -1,0 +1,16 @@
+# Instalação do mysql server
+- name: Instalando pacotes do MariaDB
+  yum:
+    name: "{{ packages }}"
+  vars:
+    packages:
+    - mariadb-server
+    - mariadb
+    - Mysql-python
+
+- name: Enable serice mysql, and touch the state
+  service:
+    name: mariadb
+    enabled: yes
+    state: started
+    

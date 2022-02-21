@@ -1,2 +1,3 @@
 ---
 # defaults file for install-db
+dbpass: "15021984"
