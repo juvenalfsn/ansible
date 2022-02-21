@@ -1,5 +1,5 @@
 - name: Create a new database with name 'wp'
-  community.mysql.mysql_db:
+  mysql_db:
     name: wpprd
     state: present
   when: ansible_facts['distribution'] == "CentOS"
