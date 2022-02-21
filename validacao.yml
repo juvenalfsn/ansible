@@ -1,8 +1,0 @@
----
-- hosts: all
-  gather_facts: yes
-  tasks:
-  - name: Criando um arquivo de teste
-    file:
-      path: "/tmp/testeawx"
-      state: touch
