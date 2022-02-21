@@ -1,14 +1,5 @@
-- name: Create a new database with name
-  mysql_db:
-    name: wp_db_prd
-    state: present
-  when: ansible_facts['distribution'] == "CentOS"
-
-- name: Create database user with password and all database privileges and
-  mysql_user:
-    name: wp_user_01
-    password: "{{ dbpass }}"
-    priv: 'wp_db_prd.*:ALL,GRANT'
-    host: "%"
+- name: Create a new database with name 'wp'
+  community.mysql.mysql_db:
+    name: wpprd
     state: present
   when: ansible_facts['distribution'] == "CentOS"
