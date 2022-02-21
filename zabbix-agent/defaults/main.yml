@@ -9,8 +9,8 @@ zabbix_agent_package: zabbix-agent
 zabbix_sender_package: zabbix-sender
 zabbix_get_package: zabbix-get
 zabbix_agent_package_state: present
-zabbix_agent_server:
-zabbix_agent_serveractive:
+zabbix_agent_server: 10.30.0.27
+zabbix_agent_serveractive: 10.30.0.27
 zabbix_selinux: False
 zabbix_agent_src_reinstall: True
 zabbix_agent_apt_priority:
