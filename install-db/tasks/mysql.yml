@@ -5,8 +5,14 @@
   vars:
     packages:
     - mariadb-server
-    - mariadb
+    - mariadb-main
     - Mysql-python
+    - perl-DBI
+    - libaio
+    - libsepol
+    - lsof
+    - boost-program-options
+
   when: ansible_facts['distribution'] == "CentOS"
 
 - name: Enable serice mysql, and touch the state
