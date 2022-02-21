@@ -1,4 +1,4 @@
 - name: Criando Container
   shell: docker container run -p {{ http_port }}:80 -e WORDPRESS_DB_HOST={{ dbhost }}:{{ dbport }} \
         -e WORDPRESS_DB_USER={{ dbuser }} -e WORDPRESS_DB_PASSWORD={{ dbpass }} -e WORDPRESS_DB_NAME={{ dbname }} -d wordpress
-  when: ansible_facts['distribution'] == "Ubunt"
+  when: ansible_facts['distribution'] == "Ubuntu"
