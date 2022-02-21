@@ -1,0 +1,6 @@
+---
+- hosts: all
+  become: yes
+  user: root
+  roles: 
+  - { role: zabbix-agent, tars: ["zabbix-agent_install"]}
