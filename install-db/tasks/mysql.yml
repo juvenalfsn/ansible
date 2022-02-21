@@ -5,13 +5,8 @@
   vars:
     packages:
     - mariadb-server
-    - mariadb-main
-    - Mysql-python
-    - perl-DBI
-    - libaio
-    - libsepol
-    - lsof
-    - boost-program-options
+    - mariadb
+    - MySQL-python
 
   when: ansible_facts['distribution'] == "CentOS"
 
