@@ -1,0 +1,6 @@
+---
+- hosts: all
+  become: yes
+  user: root
+  roles: 
+  - { role: install-wp, tars: ["install_wp"]}

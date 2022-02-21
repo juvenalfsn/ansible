@@ -1,0 +1,6 @@
+---
+- hosts: all
+  become: yes
+  user: root
+  roles: 
+  - { role: install-db, tars: ["install_db"]}
