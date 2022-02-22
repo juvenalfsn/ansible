@@ -1,4 +1,4 @@
-- name: "install Python e python-pip"
+- name: install Python e python-pip
   apt:
     name: "{{ packages }}"
   vars:
