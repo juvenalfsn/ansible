@@ -1,7 +1,7 @@
 ---
 # defaults file for zabbix-agent
 
-zabbix_agent_version: 5.0
+zabbix_agent_version: 5.0.17
 zabbix_version: "{{ zabbix_agent_version }}"
 zabbix_version_patch: 0
 zabbix_repo: zabbix
@@ -146,7 +146,7 @@ zabbix_agent_ipmi_privilege: 2
 zabbix_agent_ipmi_username:
 
 # Windows/macOS Related
-zabbix_version_long: 4.4.4
+zabbix_version_long: 5.0.17
 
 # Windows Related
 zabbix_win_package: zabbix_agent-{{ zabbix_version_long }}-windows-i386.zip
