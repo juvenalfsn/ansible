@@ -1,5 +1,5 @@
 ---
-- name: install Python e python-pip
+- name: "install Python e python-pip"
   apt:
     name: ['python', 'python-pip']
     update_cache: yes
