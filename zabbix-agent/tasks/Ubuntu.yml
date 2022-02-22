@@ -1,10 +1,8 @@
 - name: install Python e python-pip
   apt:
-    name: "{{ packages }}"
-  vars:
-    name: packages
-      - python
-      - python-pip
+    pkg:
+    - python
+    - python-pip
     update_cache: yes
     state:
     presentwhen: (ansible_os_family == "Debian") or (ansible_os_family == "Ubuntu")
