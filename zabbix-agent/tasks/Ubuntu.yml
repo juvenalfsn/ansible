@@ -1,11 +1,14 @@
----
 - name: "install Python e python-pip"
   apt:
-    name: ['python', 'python-pip']
+    name: {{ packages }}
     update_cache: yes
     state:
     presentwhen: (ansible_os_family == "Debian") or (ansible_os_family == "Ubuntu")
-
+  vars:
+    name: packages
+      - python
+      - python-pip
+      
 - name: Removendo Zabbix-Agent
   apt: 
     name: zabbix-agent
