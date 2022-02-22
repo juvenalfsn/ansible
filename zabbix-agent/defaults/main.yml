@@ -1,6 +1,6 @@
 ---
 # Zabbix server to connect to
-zabbix_agent_server: localhost
+zabbix_agent_server: 10.30.0.27
 # Zabbix port in the server to connect to
 zabbix_agent_server_port: 10051
 # HostMetadata value in the agent config
