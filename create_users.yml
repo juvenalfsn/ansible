@@ -1,0 +1,6 @@
+---
+- hosts: all
+  become: yes
+  user: root
+  roles: 
+  - { role: create_users, tars: ["create_users"]}
