@@ -1,36 +1,38 @@
 ---
 galaxy_info:
-  role_name: create_users
-  author: Ryan Daniels
-  description: Role to manage users on linux
+  author: unxnn
+  role_name: users
+  description: User management role
   license: MIT
-  min_ansible_version: 2.6
+  min_ansible_version: 2.5
   platforms:
     - name: EL
+      versions:
+        - all
+    - name: Fedora
+      versions:
+        - all
+    - name: opensuse
+      versions:
+        - all
+    - name: Debian
+      versions:
+        - all
+    - name: Ubuntu
       versions:
         - all
     - name: GenericUNIX
       versions:
         - all
         - any
-    - name: Fedora
-      versions:
-        - all
-    - name: Ubuntu
-      versions:
-        - all
     - name: GenericLinux
       versions:
         - all
         - any
-    - name: Debian
+    - name: SLES
       versions:
         - all
   galaxy_tags:
     - system
-    - users
-    - ssh
-    - accounts
-    - user
 
 dependencies: []
