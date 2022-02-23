@@ -15,13 +15,13 @@ users_create_homedirs: true
 
 # Lists of users to create and delete
 users: [juvenal]
-users_deleted: []
+#users_deleted: []
 
 # List of groups to create
 # Example:
 #   groups_to_create:
 #     - name: developers
 #       gid: 20000
-groups_to_create: []
+#groups_to_create: []
 
 authorized_keys_file: ".ssh/authorized_keys"
