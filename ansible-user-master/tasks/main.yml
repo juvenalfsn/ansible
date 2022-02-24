@@ -6,9 +6,9 @@
   tasks:
     - name: Criando usuario remoto
       user:
-       name: {{ username }}
-       comment: {{ nomecompleto }}
-       groups: {{ groupsnema }}
+       name: "{{ username }}"
+       comment: "{{ nomecompleto }}"
+       groups: "{{ groupsnema }}"
        shell: /bin/bash
        password: $1$iWiaqWQu$Xgqghqra5C/fwyZhNe0N00
       tags: user
