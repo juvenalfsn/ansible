@@ -1,0 +1,6 @@
+---
+- hosts: all
+  become: yes
+  user: root
+  roles: 
+  - criar_user
