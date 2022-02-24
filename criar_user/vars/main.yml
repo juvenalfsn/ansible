@@ -1,5 +1,4 @@
 ---
 # vars file for criar_user
 user: odoriana
-namegroups: infra
 password: "$1$owOr5.Em$68Rla6R7pUrUKh.RhgisY1"
