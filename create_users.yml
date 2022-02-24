@@ -3,4 +3,4 @@
   become: yes
   user: root
   roles: 
-  - { role: ansible-user-master }
+  - ansible-user-master
