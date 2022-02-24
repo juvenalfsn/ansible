@@ -5,7 +5,7 @@
     name: "{{ user }}"
     password: "{{ password }}"
     groups:
-      - wheel
+      - "{{ namegroups }}"
     state: present
 - name: Add {{ user }} to sudoers file
   ansible.builtin.lineinfile:
