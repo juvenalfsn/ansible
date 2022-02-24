@@ -1,3 +1,5 @@
+---
+# defaults file for ansible-user-master
 username: juvenal
 nomecomple: "Juvenal Silva"
 groupsnema: "juvenal"

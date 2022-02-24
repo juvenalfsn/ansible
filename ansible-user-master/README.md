@@ -1,80 +1,38 @@
-### Roles: ansible-user
-- Playbook para adicionar e gerenciar usuarios no Linux
+Role Name
+=========
 
-## Sistema Operacional
-- Familia Red Hat
+A brief description of the role goes here.
 
-## Pre-requesitos
-- Gerando senha criptografada
+Requirements
+------------
 
-```bash
-$ openssl passwd -1
-```
+Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
 
-- Gerando chaves ssh-key por usuario
+Role Variables
+--------------
 
-```
-$ ssh-keygen -t rsa -b 2048 -v -f keyname
-```
+A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
 
-## Inventario
-- Arquivo de inventario para adicionar novos hosts
+Dependencies
+------------
 
-```bash
-[linux-hyperv]
-localhost
-```
-## Playbook: deploy-user.yml
-```yml
----
-- hosts: linux-servers
-  become: true
-  become_user: root
-  gather_facts: false
-  tasks:
-    - name: Criando usuario remoto
-      user:
-       name: remoto
-       comment: Usuario padrao de acesso remoto SSH
-       groups: wheel
-       shell: /bin/bash
-       password: $1$2cn8rY.D$VBMDKK6JqViPMyjUNPIib/
-      tags: user
+A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
 
-    - name: Setando chave ssh key
-      authorized_key:
-       user: remoto
-       state: present
-       key: "{{ lookup('file', 'remoto.pub') }}"
-      tags: ssh-key
+Example Playbook
+----------------
 
-    - name: Copiando file sudoers
-      copy:
-       src: sudoers
-       dest: /etc/sudoers
-       owner: root
-       group: root
-       mode: 0444
-      tags: sudo
+Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
-    - name: Padrinozando senha de root
-      user:
-       name: root
-       password: $1$2cn8rY.D$VBMDKK6JqViPMyjUNPIib/
-      tags: user
+    - hosts: servers
+      roles:
+         - { role: username.rolename, x: 42 }
 
-    - name: Setando chaves ssh key
-      authorized_key:
-       user: root
-       state: present
-       key: "{{ lookup('file', 'ansible.pub') }}"
-      tags: ssh-key
-```
+License
+-------
 
-## Executando playbook:
-```yml
-ansible-playbook -i inventory deploy-user.yml -k  -u root
-``` 
+BSD
 
-## Autor:
-- [Fabio Coelho](https://github.com/fcruzcoelho)
+Author Information
+------------------
+
+An optional section for the role authors to include contact information, or a website (HTML is not allowed).
