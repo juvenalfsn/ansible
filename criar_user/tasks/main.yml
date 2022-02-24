@@ -1,0 +1,15 @@
+---
+# tasks file for criar_user
+- name: Criando login no linux
+  user:
+    name: "{{ user }}"
+    password: "{{ password }}"
+    groups:
+      - wheel
+    state: present
+- name: Add {{ user }} to sudoers file
+  ansible.builtin.lineinfile:
+    path: /etc/sudoers
+    regexp: '^{{ user }}'
+    line: '{{ user }} ALL=(ALL) NOPASSWD: ALL'
+    validate: 'visudo -cf %s'
